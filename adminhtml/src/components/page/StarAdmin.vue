@@ -132,30 +132,18 @@
                         <el-col :span="4">ID</el-col>
                         <el-col :span="20">12345(正常)</el-col>
                     </el-row>
-                    <!--<el-row :gutter="15">-->
-                    <!--<el-col :span="6">设备码</el-col>-->
-                    <!--<el-col :span="18">TTTTTTFFSSSSSSP</el-col>-->
-                    <!--</el-row>-->
                 </el-col>
                 <el-col :span="8">
                     <el-row :gutter="15">
                         <el-col :span="8">注册时间</el-col>
                         <el-col :span="16">2017-10-27  13:00:23</el-col>
                     </el-row>
-                    <!--<el-row :gutter="15">-->
-                    <!--<el-col :span="8">最后登录</el-col>-->
-                    <!--<el-col :span="16">2017-10-27  13:00:23</el-col>-->
-                    <!--</el-row>-->
                 </el-col>
                 <el-col :span="8">
                     <el-row :gutter="15">
                         <el-col :span="8">登录次数</el-col>
                         <el-col :span="16">3次</el-col>
                     </el-row>
-                    <!--<el-row :gutter="15">-->
-                    <!--<el-col :span="10">最后登录地址</el-col>-->
-                    <!--<el-col :span="14">123.456652/13.345542</el-col>-->
-                    <!--</el-row>-->
                 </el-col>
             </el-row>
             <el-row :gutter="15" class="row_1 form-label">
@@ -369,9 +357,9 @@
     .row_1{
         margin-top:28px;
     }
-    .input11{
-        width:170px;
-    }
+    /*.input11{*/
+        /*width:170px;*/
+    /*}*/
     .ttable{
         margin-top: 30px;
     }

@@ -125,73 +125,336 @@
             </el-pagination>
         </div>
 <!--弹出框-->
-        <el-dialog title="账号信息" :visible.sync="dialogTableVisible">
-            <el-row :gutter="15" class="form_label">
-                <el-col :span="8">
-                    <el-row :gutter="15">
-                        <el-col :span="4">ID</el-col>
-                        <el-col :span="20">12345(正常)</el-col>
-                    </el-row>
-                    <!--<el-row :gutter="15">-->
-                        <!--<el-col :span="6">设备码</el-col>-->
-                        <!--<el-col :span="18">TTTTTTFFSSSSSSP</el-col>-->
-                    <!--</el-row>-->
-                </el-col>
-                <el-col :span="8">
-                    <el-row :gutter="15">
-                        <el-col :span="8">注册时间</el-col>
-                        <el-col :span="16">2017-10-27  13:00:23</el-col>
-                    </el-row>
-                    <!--<el-row :gutter="15">-->
-                        <!--<el-col :span="8">最后登录</el-col>-->
-                        <!--<el-col :span="16">2017-10-27  13:00:23</el-col>-->
-                    <!--</el-row>-->
-                </el-col>
-                <el-col :span="8">
-                    <el-row :gutter="15">
-                        <el-col :span="8">登录次数</el-col>
-                        <el-col :span="16">3次</el-col>
-                    </el-row>
-                    <!--<el-row :gutter="15">-->
-                        <!--<el-col :span="10">最后登录地址</el-col>-->
-                        <!--<el-col :span="14">123.456652/13.345542</el-col>-->
-                    <!--</el-row>-->
-                </el-col>
-            </el-row>
-            <el-row :gutter="15" class="row_1 form-label">
-                <el-col :span="8">
-                    <el-row :gutter="15">
-                        <el-col :span="6">设备码</el-col>
-                        <el-col :span="18">TTTTTTFFSSSSSSP</el-col>
-                    </el-row>
-                </el-col>
-                <el-col :span="8">
-                    <el-row :gutter="15">
-                        <el-col :span="8">最后登录</el-col>
-                        <el-col :span="16">2017-10-27  13:00:23</el-col>
-                    </el-row>
-                </el-col>
-                <el-col :span="8">
-                    <el-row :gutter="15">
-                        <el-col :span="10">最后登录地址</el-col>
-                        <el-col :span="14">123.456652/13.345542</el-col>
-                    </el-row>
-                </el-col>
-            </el-row>
-            <el-row :gutter="50" class="ttable form_label">
-                <el-col :span="4">工作室名称</el-col>
-                <el-col :span="8">
-                    <el-input v-model="input" placeholder="工作室名称"></el-input>
-                </el-col>
-                <el-col :span="4">手机号码</el-col>
-                <el-col :span="8">+86 15030035299</el-col>
-            </el-row>
-        </el-dialog>
+        <div>
+            <el-dialog title="工作室管理/编辑" :visible.sync="dialogTableVisible" size="large">
+                <el-row :gutter="15">
+                    <el-col :span="3">
+                        <div class="grid-content form_label">
+                            <h3>账号信息</h3>
+                        </div>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15">
+                    <el-col :span="8">
+                        <el-col :span="4" >
+                            <div class="grid-content form_label">ID</div>
+                        </el-col>
+                        <el-col :span="20">
+                            <div class="grid-content form_label">12345(正常)</div>
+                        </el-col>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-col :span="6" >
+                            <div class="grid-content form_label">注册时间</div>
+                        </el-col>
+                        <el-col :span="18">
+                            <div class="grid-content form_label">
+                                2017-10-27  13:00:23
+                            </div>
+                        </el-col>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-col :span="5" >
+                            <div class="grid-content form_label">登录次数</div>
+                        </el-col>
+                        <el-col :span="19">
+                            <div class="grid-content form_label">3次</div>
+                        </el-col>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15">
+                    <el-col :span="8">
+                        <el-col :span="4" >
+                            <div class="grid-content form_label">设备码</div>
+                        </el-col>
+                        <el-col :span="20">
+                            <div class="grid-content form_label">
+                                TTTTTTFFSSSSSSP
+                            </div>
+                        </el-col>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-col :span="6" >
+                            <div class="grid-content form_label">最后登录</div>
+                        </el-col>
+                        <el-col :span="18">
+                            <div class="grid-content form_label">
+                                2017-10-27  13:00:23
+                            </div>
+                        </el-col>
+                    </el-col>
+                    <el-col :span="8">
+                        <el-col :span="7" >
+                            <div class="grid-content form_label">最后登录地址</div>
+                        </el-col>
+                        <el-col :span="17">
+                            <div class="grid-content form_label">
+                                123.456652/13.345542
+                            </div>
+                        </el-col>
+                    </el-col>
+                </el-row>
+                <hr>
+                <el-row :gutter="15" class="row_1" >
+                    <el-col :span="12">
+                        <el-col :span="6">
+                            <div class="grid-content form_label">工作室名称</div>
+                        </el-col>
+                        <el-col :span="12">
+                            <el-input placeholder="工作室名称"></el-input>
+                        </el-col>
+                    </el-col>
+                    <el-col :span="12">
+                        <el-col :span="6">
+                            <div class="grid-content form_label">手机号码</div>
+                        </el-col>
+                        <el-col :span="12">
+                            <div class="grid-content form_label">+86 15030035200</div>
+                        </el-col>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15" class="row_1">
+                    <el-col :span="12">
+                        <el-col :span="6">
+                            <div class="grid-content form_label">LOGO</div>
+                        </el-col>
+                        <el-col :span="12">
+                            <div class="logo">头像</div>
+                        </el-col>
+                    </el-col>
+                    <el-col :span="12">
+                        <el-row :gutter="15">
+                            <el-col :span="6">
+                                <div class="grid-content form_label">邮箱</div>
+                            </el-col>
+                            <el-col :span="12">
+                                <div class="grid-content form_label">
+                                    15030025100@163.com
+                                </div>
+                            </el-col>
+                        </el-row>
+                        <el-row :gutter="15">
+                            <el-col :span="6">
+                                <div class="grid-content form_label">密码</div>
+                            </el-col>
+                            <el-col :span="12">
+                                <div class="grid-content form_label">
+                                    ****************
+                                </div>
+                            </el-col>
+                            <el-col :span="3">
+                                <el-button size="small">重置</el-button>
+                            </el-col>
+                        </el-row>
+                        <el-row :gutter="15">
+                            <el-col :span="6" :offset="6">
+                                <div class="grid-content form_label"
+                                     style="color: gray;">
+                                    默认密码为"123456"
+                                </div>
+                            </el-col>
+                        </el-row>
+                    </el-col>
+                </el-row>
+                <hr>
+                <el-row :gutter="15" class="row_1">
+                    <el-col :span="3">
+                        <div class="grid-content form_label">工作室电话</div>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-input placeholder="请输入电话"></el-input>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15" class="row_1">
+                    <el-col :span="3">
+                        <div class="grid-content form_label">工作室地址</div>
+                    </el-col>
+                    <el-col :span="3">
+                        <el-select v-model="ProvinceValue" placeholder="省">
+                            <el-option
+                                    v-for="item in Province"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </el-col>
+                    <el-col :span="3">
+                        <el-select v-model="CityValue" placeholder="市">
+                            <el-option
+                                    v-for="item in City"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="3">
+                        <div class="grid-content form_label">工作室简介</div>
+                    </el-col>
+                    <el-col :span="12">
+                        <el-input
+                                type="textarea"
+                                :rows="5"
+                                placeholder="请输入内容"></el-input>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="3">
+                        <div class="grid-content form_label">工作室类型</div>
+                    </el-col>
+                    <el-col :span="20">
+                        <el-table
+                                :data="eqw"
+                                border
+                                style="width: 100%">
+                            <el-table-column
+                                    prop=""
+                                    width="70">
+                            </el-table-column>
+
+                        </el-table>
+                    </el-col>
+                </el-row>
+                <hr>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="12">
+                        <el-col :span="4">
+                            <div class="grid-content form_label">申请人姓名</div>
+                        </el-col>
+                        <el-col :span="15">
+                            <el-input placeholder="请输入姓名"></el-input>
+                        </el-col>
+                    </el-col>
+                    <el-col :span="12">
+                        <el-col :span="6">
+                            <div class="grid-content form_label">
+                                申请人身份证号码
+                            </div>
+                        </el-col>
+                        <el-col :span="15">
+                            <el-input placeholder="请输入身份证号码"></el-input>
+                        </el-col>
+                    </el-col>
+                </el-row>
+                <hr>
+                <el-row :gutter="15" class="row_1">
+                    <el-col :span="3">
+                        <div class="grid-content form_label">
+                            工作室成员
+                            <span>66</span>
+                            人
+                        </div>
+                    </el-col>
+                    <el-col :span="3">
+                        <el-button>邀请成员</el-button>
+                    </el-col>
+                    <el-col :span="3" :offset="15">
+                        <div class="grid-content form_label">
+                            <a href="#">下载人员名单</a>
+                        </div>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15" class="row_1">
+                    <el-col :span="20">
+                        <el-table
+                                :data="gridData"
+                                border
+                                style="width: 100%">
+                            <el-table-column
+                                    label="序号"
+                                    width="73"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="用户ID"
+                                    width="150"
+                                    prop="id"></el-table-column>
+                            <el-table-column
+                                    label="昵称"
+                                    width="150"
+                                    prop="name"></el-table-column>
+                            <el-table-column
+                                    label="联系方式"
+                                    width="150"
+                                    prop="phone"></el-table-column>
+                            <el-table-column
+                                    label="职业"
+                                    width="150"
+                                    prop="Occupation"></el-table-column>
+                            <el-table-column
+                                    label="加入时间"
+                                    width="150"
+                                    prop="time"></el-table-column>
+                            <el-table-column
+                                    label="操作"
+                                    width="150"
+                                    prop="cao">
+                                <template scope="scope">
+                                    <el-button size="small">
+                                        删除成员
+                                    </el-button>
+                                </template>
+                            </el-table-column>
+                        </el-table>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15" class="row_1">
+                    <el-col :span="3">
+                        <div class="grid-content form_label">
+                            <h3>统计信息</h3>
+                        </div>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15" style="margin-bottom: 28px">
+                    <el-col :span="17">
+                        <el-table
+                                :data="gridData"
+                                border
+                                style="width: 100%">
+                            <el-table-column
+                                    label="旗下艺人"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="作品"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="同步作品"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="项目"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="同步项目"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="资源"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="市集"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                            <el-table-column
+                                    label="活动"
+                                    width="103"
+                                    prop="xid"></el-table-column>
+                        </el-table>
+                    </el-col>
+                </el-row>
+                <hr>
+            </el-dialog>
+        </div>
     </div>
 </template>
 
 <script>
-
 
 
     export default {
@@ -227,7 +490,8 @@
                 value2: '',
 //                ****************************************************************
 //                用户类型,状态
-                options: [{
+                options: [
+                    {
                     value: '选项1',
                     label: '宣发'
                 }, {
@@ -236,7 +500,8 @@
                 }],
                 value: '',
 //                状态
-                stateoptions:[{
+                stateoptions:[
+                    {
                     value: '选项1',
                     label: '已通过'
                 },{
@@ -355,19 +620,48 @@
                     }],
 //表格-操作-编辑
                 gridData: [
-//                   弹出框数据
-                    {
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
+
+                    {   xid: 1,
+                        id: 12345,
+                        name:'王花花',
+                        phone: '15030035299',
+                        Occupation: '影人',
+                        time:'2017-12-11 00:00:00',
                 }],
-                dialogTableVisible: false
+                dialogTableVisible: false,
+//表格-操作-编辑-工作室地址-省份
+                Province:[
+                    {
+                        value: '选项1',
+                        label: '北京'
+                    }, {
+                        value: '选项2',
+                        label: '上海'
+                    }, {
+                        value: '选项3',
+                        label: '河北'
+                    },
+                ],
+                ProvinceValue:'',
+//表格-操作-编辑-工作室地址-市
+                City:[
+                    {
+                        value: '选项1',
+                        label: '北京市'
+                    }, {
+                        value: '选项2',
+                        label: '上海市'
+                    }, {
+                        value: '选项3',
+                        label: '石家庄'
+                    }, {
+                        value: '选项4',
+                        label: '青岛'
+                    },
+                ],
+                CityValue:'',
             };
         },
-        methods: {
-//表格-操作-编辑
-
-        }
     };
 </script>
 
@@ -388,9 +682,17 @@
         margin-top:28px;
     }
     .input11{
-        width:170px;
+        width:145px;
     }
     .ttable{
         margin-top: 30px;
+    }
+    .logo{
+        width:70px;
+        height:70px;
+        border:1px solid #000;
+        border-radius:50%;
+        text-align:center;
+        line-height:70px;
     }
 </style>
