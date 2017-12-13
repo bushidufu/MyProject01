@@ -5,7 +5,7 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item><i class="el-icon-menu"></i> 用户管理</el-breadcrumb-item>
-                <el-breadcrumb-item>影人列表</el-breadcrumb-item>
+                <el-breadcrumb-item>工作室管理</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
 <!--input 搜索 添加区域-->
@@ -134,6 +134,7 @@
                         </div>
                     </el-col>
                 </el-row>
+                <!--ID 注册时间-->
                 <el-row :gutter="15">
                     <el-col :span="8">
                         <el-col :span="4" >
@@ -162,6 +163,7 @@
                         </el-col>
                     </el-col>
                 </el-row>
+                <!--设备码 最后登录-->
                 <el-row :gutter="15">
                     <el-col :span="8">
                         <el-col :span="4" >
@@ -195,6 +197,7 @@
                     </el-col>
                 </el-row>
                 <hr>
+                <!--工作室名称  手机号-->
                 <el-row :gutter="15" class="row_1" >
                     <el-col :span="12">
                         <el-col :span="6">
@@ -213,13 +216,16 @@
                         </el-col>
                     </el-col>
                 </el-row>
+                <!--logo  密码-->
                 <el-row :gutter="15" class="row_1">
                     <el-col :span="12">
                         <el-col :span="6">
                             <div class="grid-content form_label">LOGO</div>
                         </el-col>
                         <el-col :span="12">
-                            <div class="logo">头像</div>
+                            <div class="logo">
+                                <a href="#">头像</a>
+                            </div>
                         </el-col>
                     </el-col>
                     <el-col :span="12">
@@ -257,6 +263,7 @@
                     </el-col>
                 </el-row>
                 <hr>
+                <!--工作室电话-->
                 <el-row :gutter="15" class="row_1">
                     <el-col :span="3">
                         <div class="grid-content form_label">工作室电话</div>
@@ -265,6 +272,7 @@
                         <el-input placeholder="请输入电话"></el-input>
                     </el-col>
                 </el-row>
+                <!--工作室地址-->
                 <el-row :gutter="15" class="row_1">
                     <el-col :span="3">
                         <div class="grid-content form_label">工作室地址</div>
@@ -290,6 +298,7 @@
                         </el-select>
                     </el-col>
                 </el-row>
+                <!--工作室简介-->
                 <el-row :gutter="15"class="row_1">
                     <el-col :span="3">
                         <div class="grid-content form_label">工作室简介</div>
@@ -301,24 +310,95 @@
                                 placeholder="请输入内容"></el-input>
                     </el-col>
                 </el-row>
+                <!--工作室类型-->
                 <el-row :gutter="15"class="row_1">
                     <el-col :span="3">
                         <div class="grid-content form_label">工作室类型</div>
                     </el-col>
-                    <el-col :span="20">
-                        <el-table
-                                :data="eqw"
-                                border
-                                style="width: 100%">
-                            <el-table-column
-                                    prop=""
-                                    width="70">
-                            </el-table-column>
-
-                        </el-table>
+                    <el-col :span="3">
+                        <div class="grid-content form_label">最多选5个</div>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="2" :offset="3">
+                        <div class="grid-content form_lable">制作组</div>
+                    </el-col>
+                    <el-col :span="17" >
+                        <el-checkbox-group
+                                v-model="checkedCities1"
+                                :min="1"
+                                :max="5">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </el-checkbox-group>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="2" :offset="3">
+                        <div class="grid-content form_lable">制作组</div>
+                    </el-col>
+                    <el-col :span="17" >
+                        <el-checkbox-group
+                                v-model="checkedCities1"
+                                :min="1"
+                                :max="5">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </el-checkbox-group>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="2" :offset="3">
+                        <div class="grid-content form_lable">制作组</div>
+                    </el-col>
+                    <el-col :span="17" >
+                        <el-checkbox-group
+                                v-model="checkedCities1"
+                                :min="1"
+                                :max="5">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </el-checkbox-group>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="2" :offset="3">
+                        <div class="grid-content form_lable">制作组</div>
+                    </el-col>
+                    <el-col :span="17" >
+                        <el-checkbox-group
+                                v-model="checkedCities1"
+                                :min="1"
+                                :max="5">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </el-checkbox-group>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="2" :offset="3">
+                        <div class="grid-content form_lable">制作组</div>
+                    </el-col>
+                    <el-col :span="17" >
+                        <el-checkbox-group
+                                v-model="checkedCities1"
+                                :min="1"
+                                :max="5">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </el-checkbox-group>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="15"class="row_1">
+                    <el-col :span="2" :offset="3">
+                        <div class="grid-content form_lable">制作组</div>
+                    </el-col>
+                    <el-col :span="17" >
+                        <el-checkbox-group
+                                v-model="checkedCities1"
+                                :min="1"
+                                :max="5">
+                            <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
+                        </el-checkbox-group>
                     </el-col>
                 </el-row>
                 <hr>
+                <!--申请人姓名 身份证号-->
                 <el-row :gutter="15"class="row_1">
                     <el-col :span="12">
                         <el-col :span="4">
@@ -340,6 +420,7 @@
                     </el-col>
                 </el-row>
                 <hr>
+                <!--工作室成员-->
                 <el-row :gutter="15" class="row_1">
                     <el-col :span="3">
                         <div class="grid-content form_label">
@@ -400,6 +481,7 @@
                         </el-table>
                     </el-col>
                 </el-row>
+                <!--统计信息-->
                 <el-row :gutter="15" class="row_1">
                     <el-col :span="3">
                         <div class="grid-content form_label">
@@ -456,7 +538,8 @@
 
 <script>
 
-
+    const cityOptions = [
+        '导演', '影人', '助理', '制片人', '经纪人', '编剧', '道具', '替身', '主角'];
     export default {
         data() {
             return {
@@ -660,6 +743,8 @@
                     },
                 ],
                 CityValue:'',
+                checkedCities1: [],
+                cities: cityOptions
             };
         },
     };
@@ -690,7 +775,7 @@
     .logo{
         width:70px;
         height:70px;
-        border:1px solid #000;
+        border:1px dashed #000;
         border-radius:50%;
         text-align:center;
         line-height:70px;
